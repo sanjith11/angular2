@@ -1,0 +1,19 @@
+<p>
+Reddit Posts
+</p>
+
+
+
+
+<div class='photo-grid-container'>
+  <div class='photo-grid'>
+
+    <div *ngFor="let data of redditData" class='photo-grid-item'>
+      <img src='{{data.url}}'/>
+    </div>
+
+  </div>
+</div>
+
+
+<button (click)="getRedditPosts()"> Load Reddit posts</button> <br>

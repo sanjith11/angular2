@@ -1,0 +1,13 @@
+
+<div>
+    Name is {{name}}
+</div>
+
+
+<label> Name: </label>
+<!--
+<input type="text" [value]="name" (keyup)="name = $event.target.value" />
+-->
+<input type="text" [(ngModel)]="name" />
+
+<li *ngFor="let customer of customers">{{customer.id}}- {{customer.name}}</li>

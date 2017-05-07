@@ -1,0 +1,19 @@
+<h1>
+    Hello {{title}}
+</h1>
+
+<router-outlet>
+</router-outlet>
+
+
+<a routerLink="/reddit" routerLinkActive="active">take to Reddit component(san)</a>
+
+<a routerLink="/customer" routerLinkActive="active">take to Customer component</a>
+
+<a routerLink="/notes" routerLinkActive="active">take to Notes component</a>
+
+<a routerLink="/notes/noteList" routerLinkActive="active">take to Note List component</a>
+
+<a routerLink="/notes/noteMainList" routerLinkActive="active">take to Main Note List component</a>
+<br>
+<button (click)='goBack()'>Back</button>

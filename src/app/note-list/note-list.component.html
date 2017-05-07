@@ -1,0 +1,22 @@
+
+<form #f="ngForm" novalidate>
+<button (click)="showNewNoteControls()"> Add new note </button>
+<br>
+<br>
+
+<div [hidden]="isHideNewNoteControls()">
+
+  <textarea ngModel [(ngModel)]="noteText" name="noteText" rows="4" cols="50" placeholder="new Note..."> 
+    </textarea>
+  <button (click)="saveNote()"> Save </button>
+  <button (click)="cancelNoteCreation()"> cancel </button>
+
+</div>
+
+<div *ngFor="let note of noteList;let i = index;">
+
+ <app-note-main [noteMain]="note"></app-note-main>
+<br>
+<br>
+</div>
+</form>

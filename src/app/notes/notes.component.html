@@ -1,0 +1,48 @@
+<label> Reactive Notes Form</label>
+<br>
+<br>
+<br>
+<button (click)="showNewNoteControls()"> Add Note </button>
+<br>
+<br>
+<br>
+<form [formGroup]="notesFormGroup">
+
+  <div [ngClass]="{'hidden': hideNoteAdditionSection()}">
+    <textarea id="noteText" rows="4" cols="50" placeholder="Enter your note" formControlName="noteText"> 
+    </textarea>
+    <button (click)="saveNote()"> Save </button>
+    <button (click)="hideNewNoteControls()"> cancel </button>
+  </div>
+
+  <div *ngFor="let note of notesArray;let i = index;">
+    <div *ngIf="note.noteLevel==0">
+      <br><br><br> {{note.noteAuthor}}: {{note.noteText}}
+      <br> 
+    </div>
+    <div *ngIf="note.noteLevel!=0">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{note.noteAuthor}}: {{note.noteText}}
+    </div>
+
+    <div *ngIf="isReplyControlsRequired(i)">
+      <button [disabled]="isReplyDisabled()" (click)="showNewCommentControls(i)">Reply</button>
+      <div [ngClass]="{'hidden': hideComments(i)}">
+        <textarea formControlName="commentText" rows="4" cols="50" placeholder="Enter your comment {{i}}"> 
+    </textarea>
+        <button (click)="saveComment(i)"> Save </button>
+      <button (click)="hideNewCommentControls()"> cancel </button>
+    </div>
+  </div>
+  </div>
+
+
+
+  <diV>
+    <br>Dirty: {{ notesFormGroup.dirty }}
+    <br>Touched: {{ notesFormGroup.touched }}
+    <br>Valid: {{ notesFormGroup.valid }}
+    <br>Value: {{ notesFormGroup.value | json }}
+
+
+  </diV>
+</form>

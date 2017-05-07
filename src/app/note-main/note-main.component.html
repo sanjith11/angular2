@@ -1,0 +1,18 @@
+<form #f="ngForm" novalidate>
+  <div>
+
+    {{noteMain.noteAuthor}} : {{noteMain.noteText}}
+    <br>
+    <div *ngFor="let subNote of noteMain.subNotes;let i = index;">
+      <span style="padding-left:5em">{{subNote.noteAuthor}}::{{subNote.noteText}}</span>
+    </div>
+    <button (click)="showSubNoteControls()"> Reply </button>
+    <div [hidden]="ishideSubNoteControls()">
+      <textarea ngModel [(ngModel)]="subNoteText" name="subNoteText" rows="4" cols="50" placeholder="Enter your reply"> 
+    </textarea>
+      <button (click)="saveSubNote()"> Save </button>
+      <button (click)="cancelSubNoteCreation()"> cancel </button>
+    </div>
+
+  </div>
+</form>
