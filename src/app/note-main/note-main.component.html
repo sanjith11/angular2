@@ -1,8 +1,9 @@
 <form #f="ngForm" novalidate>
-  <div>
+  <div >
 
+<div class="white-space-pre-line">
     {{noteMain.noteAuthor}} : {{noteMain.noteText}}
-    <br>
+</div>
     <div *ngFor="let subNote of noteMain.subNotes;let i = index;">
       <span style="padding-left:5em">{{subNote.noteAuthor}}::{{subNote.noteText}}</span>
     </div>
