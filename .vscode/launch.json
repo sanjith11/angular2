@@ -1,0 +1,23 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            
+            "name": " chrome Launch localhost",
+            "type": "chrome",
+            "request": "launch",
+            "runtimeArgs":["--disable-web-security"],
+           // "trace":"verbose",
+            "url": "http://localhost:4200/",
+            "webRoot": "${workspaceRoot}/"
+        },
+       {
+            "name": "Attach",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "url": "http://localhost:4200/",
+            "webRoot": "${workspaceRoot}"
+        }
+    ]
+}
