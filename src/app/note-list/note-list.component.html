@@ -1,5 +1,5 @@
 <form #f="ngForm" novalidate>
-  <button (click)="showNewNoteControls()"> Add new note </button>
+  <button  class="btn btn-default" (click)="showNewNoteControls()"> Add new note </button>
   <div [hidden]="isHideNewNoteControls()">
     <textarea ngModel [(ngModel)]="noteText" name="noteText" rows="4" cols="50" placeholder="new Note..."> 
     </textarea>

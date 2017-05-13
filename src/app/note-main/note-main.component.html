@@ -1,19 +1,50 @@
 <form #f="ngForm" novalidate>
-  <div >
+  <div>
 
-<div class="white-space-pre-line">
-    {{noteMain.noteAuthor}} : {{noteMain.noteText}}
-</div>
-    <div *ngFor="let subNote of noteMain.subNotes;let i = index;">
-      <span style="padding-left:5em">{{subNote.noteAuthor}}::{{subNote.noteText}}</span>
-    </div>
-    <button (click)="showSubNoteControls()"> Reply </button>
-    <div [hidden]="ishideSubNoteControls()">
-      <textarea ngModel [(ngModel)]="subNoteText" name="subNoteText" rows="4" cols="50" placeholder="Enter your reply"> 
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+
+        <h3 class="panel-title">{{noteMain.noteAuthor}}</h3>
+
+      </div>
+      <div class="panel-body" >
+        
+      <div class="col-xs-12" style=" display:inline; margin-top: 2px ;background-color: lightblue">
+        <span class="col-xs-8 white-space-pre-line" style="vertical-align: middle">
+        {{noteMain.noteText}}
+        </span>
+        <span class="col-xs-4 white-space-pre-line">
+        {{noteMain.noteText}}<br>
+        {{noteMain.noteText}}<br>
+        {{noteMain.noteText}}<br>
+        {{noteMain.noteText}}<br>
+        {{noteMain.noteText}}<br>
+        
+        </span>
+        </div>
+        <div *ngFor="let subNote of noteMain.subNotes;let i = index;">
+          <div class="panel-body white-space-pre-line" style=" margin-top: 2px ;background-color: lightgreen">
+            <span style="padding-left:5em">{{subNote.noteAuthor}}::{{subNote.noteText}}</span>
+          </div>
+        </div>
+        <button (click)="showSubNoteControls()"> Reply </button>
+        <div [hidden]="ishideSubNoteControls()">
+          <textarea ngModel [(ngModel)]="subNoteText" name="subNoteText" rows="4" cols="50" placeholder="Enter your reply"> 
     </textarea>
-      <button (click)="saveSubNote()"> Save </button>
-      <button (click)="cancelSubNoteCreation()"> cancel </button>
+          <button (click)="saveSubNote()"> Save </button>
+          <button (click)="cancelSubNoteCreation()"> cancel </button>
+        </div>
+
+      </div>
     </div>
+
+
+
+
+
+
+
 
   </div>
 </form>

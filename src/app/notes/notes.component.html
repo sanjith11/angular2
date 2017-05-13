@@ -16,9 +16,10 @@
   </div>
 
   <div *ngFor="let note of notesArray;let i = index;">
+   
     <div *ngIf="note.noteLevel==0">
       <br><br><br> {{note.noteAuthor}}: {{note.noteText}}
-      <br> 
+      <br>
     </div>
     <div *ngIf="note.noteLevel!=0">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{note.noteAuthor}}: {{note.noteText}}
@@ -27,12 +28,13 @@
     <div *ngIf="isReplyControlsRequired(i)">
       <button [disabled]="isReplyDisabled()" (click)="showNewCommentControls(i)">Reply</button>
       <div [ngClass]="{'hidden': hideComments(i)}">
-        <textarea formControlName="commentText" rows="4" cols="50" placeholder="Enter your comment {{i}}"> 
+        <textarea class="form-control" formControlName="commentText" rows="4" cols="50" placeholder="Enter your comment {{i}}"> 
     </textarea>
-        <button (click)="saveComment(i)"> Save </button>
-      <button (click)="hideNewCommentControls()"> cancel </button>
+        <button class="btn btn-primary" (click)="saveComment(i)"> Save </button>
+        <button class="btn btn-primary" (click)="hideNewCommentControls()"> cancel </button>
+
+      </div>
     </div>
-  </div>
   </div>
 
 
