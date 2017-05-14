@@ -8,21 +8,26 @@
         <h3 class="panel-title">{{noteMain.noteAuthor}}</h3>
 
       </div>
-      <div class="panel-body" >
-        
-      <div class="col-xs-12" style=" display:inline; margin-top: 2px ;background-color: lightblue">
-        <span class="col-xs-8 white-space-pre-line" style="vertical-align: middle">
+
+
+        <div class="row" style="   background-color: lightblue">
+    <div class="col-xs-12 col-sm-8 vcenter " >
+        <div class="vcenter white-space-pre-line">
         {{noteMain.noteText}}
-        </span>
-        <span class="col-xs-4 white-space-pre-line">
-        {{noteMain.noteText}}<br>
-        {{noteMain.noteText}}<br>
-        {{noteMain.noteText}}<br>
-        {{noteMain.noteText}}<br>
-        {{noteMain.noteText}}<br>
-        
-        </span>
         </div>
+    </div><!--
+    --><div class="col-xs-12 col-sm-4 vcenter ">
+        {{noteMain.noteText}}<br>
+        {{noteMain.noteText}}<br>
+        {{noteMain.noteText}}<br>
+        {{noteMain.noteText}}<br>
+        {{noteMain.noteText}}<br>
+    </div>
+</div>
+
+
+      <div class="panel-body "  >
+
         <div *ngFor="let subNote of noteMain.subNotes;let i = index;">
           <div class="panel-body white-space-pre-line" style=" margin-top: 2px ;background-color: lightgreen">
             <span style="padding-left:5em">{{subNote.noteAuthor}}::{{subNote.noteText}}</span>

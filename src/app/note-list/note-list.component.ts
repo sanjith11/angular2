@@ -13,6 +13,8 @@ export class NoteListComponent implements OnInit {
   hideNewNoteControls: boolean;
   noteText: string;
 
+  noteTestFilter:string;
+
   constructor(private noteService: NotesService) { }
 
   ngOnInit() {
