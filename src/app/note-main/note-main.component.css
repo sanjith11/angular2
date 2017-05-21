@@ -7,3 +7,7 @@ div.white-space-pre-line {
     vertical-align: middle;
     float: none;
 }
+
+.hov:hover > .dropdown-menu {
+    display: block;
+}

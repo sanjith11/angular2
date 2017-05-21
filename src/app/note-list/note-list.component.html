@@ -1,6 +1,6 @@
 <form #f="ngForm" novalidate>
-  <th><input type="text" name="title" [(ngModel)]="noteTestFilter" placeholder="Title"></th>
-  <button  class="btn btn-default" (click)="showNewNoteControls()"> Add new note </button>
+
+  <button class="btn btn-default" (click)="showNewNoteControls()"> Add new note </button>
   <div [hidden]="isHideNewNoteControls()">
     <textarea ngModel [(ngModel)]="noteText" name="noteText" rows="4" cols="50" placeholder="new Note..."> 
     </textarea>
@@ -8,11 +8,149 @@
     <button (click)="cancelNoteCreation()"> cancel </button>
 
   </div>
+  <div class="panel panel-default">
+    <div class="panel-heading clearfix">
+      <i class="icon-calendar"></i>
+      <h3 class="panel-title">Search</h3>
+    </div>
+
+    <div class="panel-body">
+
+      <form class="form-horizontal">
+        <div class="form-inline">
+          <div class="col-xs-8">
+            <div class="form-group">
+
+              <button type="button" class="btn btn-default "> [+] </button>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="title" [(ngModel)]="noteTestFilter" placeholder="Search">
+            </div>
+            <div class="form-group">
+              <span style=" margin: 0 10px;"></span>
+              <span class="checkbox-inline">
+              <input type="checkbox">
+              <label>Flagged</label>
+            </span>
+            </div>
+          </div>
+
+           <div class="input-group col-xs-4">
+          <span class="dropdown hov pull-right">
+
+            <button  type="button " data-toggle="dropdown" class="btn btn-borderless " aria-expanded="false">
+            <span class="bold summary down-arrow">Attachments</span></button>
+          <div class="dropdown-menu options">
+            <div class="genres">
+              <div class="genre">
+                <input type="checkbox" id="genre-action" class="filter-checkbox" value="1" data-genre="Action">
+                <label for="genre-action">Action</label><span class="only">only</span></div>
+              <div class="genre">
+                <input type="checkbox" id="genre-animation" class="filter-checkbox" value="2" data-genre="Animation">
+                <label for="genre-animation">Animation</label><span class="only">only</span></div>
+              <div class="genre">
+                <input type="checkbox" id="genre-art_foreign" class="filter-checkbox" value="4" data-genre="Art &amp; Foreign">
+                <label for="genre-art_foreign">Art &amp; Foreign</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-classics" class="filter-checkbox" value="5" data-genre="Classics">
+                <label for="genre-classics">Classics</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-comedy" class="filter-checkbox" value="6" data-genre="Comedy"><label for="genre-comedy">Comedy</label>
+                <span class="only">only</span>
+              </div>
+              <div class="genre"><input type="checkbox" id="genre-documentary" class="filter-checkbox" value="8" data-genre="Documentary">
+                <label for="genre-documentary">Documentary</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-drama" class="filter-checkbox" value="9" data-genre="Drama"><label for="genre-drama">Drama</label>
+                <span class="only">only</span>
+              </div>
+              <div class="genre"><input type="checkbox" id="genre-horror" class="filter-checkbox" value="10" data-genre="Horror"><label for="genre-horror">Horror</label>
+                <span class="only">only</span>
+              </div>
+              <div class="genre"><input type="checkbox" id="genre-kids_family" class="filter-checkbox" value="11" data-genre="Kids &amp; Family">
+                <label for="genre-kids_family">Kids &amp; Family</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-mystery" class="filter-checkbox" value="13" data-genre="Mystery">
+                <label for="genre-mystery">Mystery</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-romance" class="filter-checkbox" value="18" data-genre="Romance">
+                <label for="genre-romance">Romance</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-sci_fi_fantasy" class="filter-checkbox" value="14" data-genre="Sci-fi &amp; Fantasy">
+                <label for="genre-sci_fi_fantasy">Sci-fi &amp; Fantasy</label><span class="only">only</span></div>
+            </div>
+            <h3 class="clearfix">
+              <div class="fr mts">Select All</div>
+            </h3>
+          </div>
+          </span>
+        </div>
+
+
+
+
+
+        </div>
+
+
+      </form>
+
+
+
+
+
+
+      <!--
+        <div class="input-group col-xs-6 ">
+          <span class="dropdown hov pull-right">
+
+            <button  type="button " data-toggle="dropdown" class="btn btn-borderless " aria-expanded="false">
+            <span class="bold summary down-arrow">Attachments</span></button>
+          <div class="dropdown-menu options">
+            <div class="genres">
+              <div class="genre">
+                <input type="checkbox" id="genre-action" class="filter-checkbox" value="1" data-genre="Action">
+                <label for="genre-action">Action</label><span class="only">only</span></div>
+              <div class="genre">
+                <input type="checkbox" id="genre-animation" class="filter-checkbox" value="2" data-genre="Animation">
+                <label for="genre-animation">Animation</label><span class="only">only</span></div>
+              <div class="genre">
+                <input type="checkbox" id="genre-art_foreign" class="filter-checkbox" value="4" data-genre="Art &amp; Foreign">
+                <label for="genre-art_foreign">Art &amp; Foreign</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-classics" class="filter-checkbox" value="5" data-genre="Classics">
+                <label for="genre-classics">Classics</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-comedy" class="filter-checkbox" value="6" data-genre="Comedy"><label for="genre-comedy">Comedy</label>
+                <span class="only">only</span>
+              </div>
+              <div class="genre"><input type="checkbox" id="genre-documentary" class="filter-checkbox" value="8" data-genre="Documentary">
+                <label for="genre-documentary">Documentary</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-drama" class="filter-checkbox" value="9" data-genre="Drama"><label for="genre-drama">Drama</label>
+                <span class="only">only</span>
+              </div>
+              <div class="genre"><input type="checkbox" id="genre-horror" class="filter-checkbox" value="10" data-genre="Horror"><label for="genre-horror">Horror</label>
+                <span class="only">only</span>
+              </div>
+              <div class="genre"><input type="checkbox" id="genre-kids_family" class="filter-checkbox" value="11" data-genre="Kids &amp; Family">
+                <label for="genre-kids_family">Kids &amp; Family</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-mystery" class="filter-checkbox" value="13" data-genre="Mystery">
+                <label for="genre-mystery">Mystery</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-romance" class="filter-checkbox" value="18" data-genre="Romance">
+                <label for="genre-romance">Romance</label><span class="only">only</span></div>
+              <div class="genre"><input type="checkbox" id="genre-sci_fi_fantasy" class="filter-checkbox" value="14" data-genre="Sci-fi &amp; Fantasy">
+                <label for="genre-sci_fi_fantasy">Sci-fi &amp; Fantasy</label><span class="only">only</span></div>
+            </div>
+            <h3 class="clearfix">
+              <div class="fr mts">Select All</div>
+            </h3>
+          </div>
+          </span>
+        </div>
+-->
+    </div>
+  </div>
+
+
+
+
 
   <div *ngFor="let note of noteList | notefilter:noteTestFilter ;let i = index;">
 
     <app-note-main [noteMain]="note"></app-note-main>
-   
+
 
   </div>
 </form>
