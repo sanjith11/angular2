@@ -16,7 +16,6 @@
     ]
   },
     "files": [   
-    	"../typings/pdf/pdf.d.ts",
     	"../typings/pdf/pdfjs-dist.d.ts"
     ]
 }

@@ -8,22 +8,31 @@ import * as PDFJS from "pdfjs-dist"; // Imports a global PDFJS object.
 //import { PDFJS1 } from 'PDFJS';
 import * as $ from "jquery";
 @Injectable()
-export class RedditService {
+export class RedditService {  
 
-  constructor(private http:Http) { }
-
-getRedditPosts():any{
-
-/*
+  constructor(private http:Http) { 
+var url = '//cdn.mozilla.net/pdfjs/helloworld.pdf';
 var pdfDoc: PDFDocumentProxy;
 var pageNum: number;
-PDFJS.getDocument('helloworld.pdf').then(function (pdf) {
+PDFJS.getDocument(url).then(function (pdf) {
 	// Using promise to fetch the page
 	pdfDoc = pdf;
 	pageNum = 1;
 
+}, (err) => {console.log(err);
+
+console.log(" ######################## san #############");
+
 });
-*/
+
+
+  }
+
+getRedditPosts():any{
+
+
+
+
 
 return this.http.get("http://www.reddit.com/r/EarthPorn.json").map((response:Response)=>{
  
