@@ -10,7 +10,8 @@ import { SanComponentComponent } from './san-component/san-component.component';
 import { NotesComponent } from './notes/notes.component';
 import { NoteListComponent } from './note-list/note-list.component';
 import { NoteMainComponent } from './note-main/note-main.component';
-import {NoteFilter} from './notes/note-filter'
+import {NoteFilter} from './notes/note-filter';
+
 
 
 const appRoutes:Routes =[

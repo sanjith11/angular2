@@ -1,14 +1,29 @@
+
 import { Injectable } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import {Http,Response,RequestOptions,Headers} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import {RedditData} from './RedditData';
+import * as PDFJS from "pdfjs-dist"; // Imports a global PDFJS object.
+//import { PDFJS1 } from 'PDFJS';
+import * as $ from "jquery";
 @Injectable()
 export class RedditService {
 
   constructor(private http:Http) { }
 
 getRedditPosts():any{
+
+/*
+var pdfDoc: PDFDocumentProxy;
+var pageNum: number;
+PDFJS.getDocument('helloworld.pdf').then(function (pdf) {
+	// Using promise to fetch the page
+	pdfDoc = pdf;
+	pageNum = 1;
+
+});
+*/
 
 return this.http.get("http://www.reddit.com/r/EarthPorn.json").map((response:Response)=>{
  
